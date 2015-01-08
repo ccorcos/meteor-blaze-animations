@@ -1,0 +1,134 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  width: 100%;
+  font-family: helvetica, sans-serif;;
+}
+
+// primary color, blue
+@color1: #0074D9;
+@textColor1: #FFFFFF;
+
+// secondary color, green
+@color2: #2ECC40;
+@textColor2: #FFFFFF;
+
+// highlight color, yellow
+@color3: #FFDC00;
+@textColor3: #000000;
+
+// highlight color, red
+@color4: #FF4136;
+@textColor4: #FFFFFF;
+
+@navHeight: 75px;
+@rowHeight: 55px;
+@toolbarHeight: 65px;
+@inputHeight: 40px;
+@buttonHeight: 50px;
+
+.nav {
+  position: fixed;
+  top: 0;
+  background-color: @color1;
+  height: @navHeight;
+  width: 100%;
+  text-align: center;
+  line-height: @navHeight;
+  .title {
+    color: @textColor1;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 2rem;
+  }
+  .right {
+    color: @textColor1;
+    line-height: @navHeight;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    * {
+      vertical-align: middle;
+      font-size: 3rem;
+    }
+  }
+  .left {
+    color: @textColor1;
+    line-height: @navHeight;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 15px;
+    * {
+      vertical-align: middle;
+      font-size: 3rem;
+    }
+  }
+}
+
+.toolbar {
+  position: fixed;
+  bottom: 0;
+  background-color: @color2;
+  width: 100%;
+  text-align: center;
+  line-height: @toolbarHeight;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+  }
+  :nth-child(1) {
+    background-color: @color2;
+    color: @textColor2;
+  }
+  :nth-child(2) {
+    background-color: @color1;
+    color: @textColor1;
+  }
+  :nth-child(3) {
+    background-color: @color4;
+    color: @textColor4;
+  }
+}
+
+
+.leaderboard {
+  margin-bottom: 3*@toolbarHeight;
+  margin-top: @navHeight;
+  .list {
+    .player {
+      height: @rowHeight;
+      line-height: @rowHeight;
+      text-align: center;
+      &.selected {
+        background-color: @color3;
+        color: @textColor3;
+      }
+    }
+
+  }
+}
+
+.toolbar1 {
+  height: @toolbarHeight;
+}
+
+.toolbar2 {
+  height: 2*@toolbarHeight;
+}
+
+.toolbar3 {
+  height: 3*@toolbarHeight;
+}
+
+.profile {
+  margin-top: @navHeight + 15px;
+  text-align: center;
+  font-size: 18px;
+}

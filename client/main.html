@@ -1,0 +1,42 @@
+<template name="layout">
+  {{> yield}}
+</template>
+
+<template name="leaderboard">
+  <div class="leaderboard">
+    <div class="nav">
+      <div class="title">Leaderboard</div>
+      <div class="right toProfile">profile</div>
+    </div>
+    <div class="list">
+      {{#each players}}
+        {{> player}}
+      {{/each}}
+    </div>
+    <div class="toolbar toolbar3">
+      {{#if selected}}
+        <div class="add5">add5</div>
+      {{else}}
+        <div class="">select a player</div>
+      {{/if}}
+      <div class="new">new</div>
+      <div class="remove">remove</div>
+    </div>
+  </div>
+</template>
+
+<template name="profile">
+  <div class="nav">
+    <div class="title">Profile</div>
+    <div class="left toLeaderboard">leaderboard</div>
+  </div>
+  <div class="profile">
+    {{#with player}}
+      {{name}}: {{score}}
+    {{/with}}
+  </div>
+</template>
+
+<template name="player">
+  <div class="player {{isSelected}}">{{name}}: {{score}}</div>
+</template>
