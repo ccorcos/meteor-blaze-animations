@@ -6,8 +6,6 @@ We will have 2 pages that can animate between. One page will have buttons to add
 
 ## To Do
 
+- better API for transitioning
 - slide to profile and back to leaderboard easily.
-  - note how the nav div is reused! that could be an issue.
-
 - animate moveElement when the leaderboard score changes
-
