@@ -30,7 +30,9 @@ body {
 @inputHeight: 40px;
 @buttonHeight: 50px;
 
+
 .nav {
+  z-index: 100;
   position: fixed;
   top: 0;
   background-color: @color1;
@@ -99,8 +101,8 @@ body {
 
 
 .leaderboard {
-  margin-bottom: 3*@toolbarHeight;
-  margin-top: @navHeight;
+  padding-bottom: 3*@toolbarHeight;
+  padding-top: @navHeight;
   .list {
     .player {
       height: @rowHeight;
@@ -128,7 +130,7 @@ body {
 }
 
 .profile {
-  margin-top: @navHeight + 15px;
+  padding-top: @navHeight + 15px;
   text-align: center;
   font-size: 18px;
 }
