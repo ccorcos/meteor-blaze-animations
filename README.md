@@ -6,6 +6,6 @@ We will have 2 pages that can animate between. One page will have buttons to add
 
 ## To Do
 
-- better API for transitioning
+- better API for transitioning with iroun router, etc.
 - slide to profile and back to leaderboard easily.
 - animate moveElement when the leaderboard score changes
