@@ -83,30 +83,29 @@ Template.leaderboard.rendered = ->
 
 # animations!
 Template.layout.rendered = ->
-  
+
   @find(".yield")._uihooks =
     insertElement: (node, next) ->
       console.log "insert yield"
       $node = $(node)
       if $node.hasClass('leaderboard')
         # initialize the leaderboard to the left
-        $node.css('transform', 'translateX(-100%)')
+        $.Velocity.hook($node, "translateX", "-100%");
         $node.insertBefore(next)
-        # animate to the center
-        $node.velocity {translateX: '0%'},
-          duration: 500
-          easing: 'ease-in-out'
-          queue: false
+          .velocity {translateX: '0%'},
+            duration: 500
+            easing: 'ease-in-out'
+            queue: false
 
       else if $node.hasClass('profile')
         # initialize the profile to the right
-        $node.css('transform', 'translateX(100%)')
+
+        $.Velocity.hook($node, "translateX", "100%");
         $node.insertBefore(next)
-        # animate to the center
-        $node.velocity {translateX: '0'},
-          duration: 500
-          easing: 'ease-in-out'
-          queue: false
+          .velocity {translateX: '0%'},
+            duration: 500
+            easing: 'ease-in-out'
+            queue: false
 
       else
         $node.insertBefore(next)
