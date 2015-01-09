@@ -6,16 +6,21 @@
 
 <template name="leaderboard">
   <div class="leaderboard page">
+
     <div class="nav">
       <div class="title">Leaderboard</div>
       <div class="right toProfile">profile</div>
     </div>
-    <div class="list">
-      {{#each players}}
-        {{> player}}
-      {{/each}}
+
+    <div class="content under-nav above-toolbar3">
+      <div class="list">
+        {{#each players}}
+          {{> player}}
+        {{/each}}
+      </div>
     </div>
-    <div class="toolbar toolbar3">
+
+    <div class="toolbar3">
       {{#if selected}}
         <div class="add5">add5</div>
       {{else}}
@@ -24,20 +29,26 @@
       <div class="new">new</div>
       <div class="remove">remove</div>
     </div>
+
   </div>
 </template>
 
 <template name="profile">
   <div class="profile page">
+
     <div class="nav">
       <div class="title">Profile</div>
       <div class="left toLeaderboard">leaderboard</div>
     </div>
-    <div class="stats">
-      {{#with player}}
-        {{name}}: {{score}}
-      {{/with}}
+
+    <div class="content under-nav">
+      <div class="stats">
+        {{#with player}}
+          {{name}}: {{score}}
+        {{/with}}
+      </div>
     </div>
+
   </div>
 </template>
 

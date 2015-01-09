@@ -23,6 +23,28 @@ body {
     left: 0;
     right: 0;
     overflow-x: hidden;
+    .content {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      &.under-nav {
+        top: @navHeight;
+      }
+      &.above-toolbar {
+        bottom: @toolbarHeight;
+      }
+      &.above-toolbar2 {
+        bottom: @toolbarHeight*2;
+      }
+      &.above-toolbar3 {
+        bottom: @toolbarHeight*3;
+      }
+    }
   }
 }
 
@@ -52,7 +74,7 @@ body {
 
 .nav {
   z-index: 100;
-  position: fixed;
+  position: absolute;
   top: 0;
   background-color: @color1;
   height: @navHeight;
@@ -93,7 +115,7 @@ body {
 }
 
 .toolbar {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   background-color: @color2;
   width: 100%;
@@ -118,10 +140,20 @@ body {
   }
 }
 
+.toolbar2 {
+  .toolbar;
+  height: 2*@toolbarHeight;
+}
+
+.toolbar3 {
+  .toolbar;
+  height: 3*@toolbarHeight;
+}
+
+
+
 
 .leaderboard {
-  margin-bottom: 3*@toolbarHeight;
-  margin-top: @navHeight;
   .list {
     .player {
       height: @rowHeight;
@@ -136,21 +168,12 @@ body {
   }
 }
 
-.toolbar1 {
-  height: @toolbarHeight;
-}
-
-.toolbar2 {
-  height: 2*@toolbarHeight;
-}
-
-.toolbar3 {
-  height: 3*@toolbarHeight;
-}
 
 .profile {
-  margin-top: @navHeight + 15px;
   text-align: center;
   font-size: 18px;
+  .content {
+    margin-top: 15px;
+  }
 }
 
