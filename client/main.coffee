@@ -89,16 +89,20 @@ Template.layout.rendered = ->
       console.log "insert yield"
       $node = $(node)
       if $node.hasClass('leaderboard')
+        # initialize the leaderboard to the left
         $node.css('transform', 'translateX(-100%)')
         $node.insertBefore(next)
+        # animate to the center
         $node.velocity {translateX: '0%'},
           duration: 500
           easing: 'ease-in-out'
           queue: false
 
       else if $node.hasClass('profile')
+        # initialize the profile to the right
         $node.css('transform', 'translateX(100%)')
         $node.insertBefore(next)
+        # animate to the center
         $node.velocity {translateX: '0'},
           duration: 500
           easing: 'ease-in-out'
@@ -107,31 +111,29 @@ Template.layout.rendered = ->
       else
         $node.insertBefore(next)
 
-    moveElement: (node, next) ->
-      console.log "move yield"
-      $node = $(node)
-      $next = $(next)
-      $node.insertBefore(next)
-
     removeElement: (node) ->
       console.log "remove yield"
       $node = $(node)
       if $node.hasClass('leaderboard')
+        # translate off screen to the left
         $node.velocity {translateX: '-100%'},
           duration: 500
           easing: 'ease-in-out'
           queue: false
           complete: -> 
+            # remove when animation is complete
             $node.remove()
 
       else if $node.hasClass('profile')
+        # translate off screen to the right
         $node.velocity {translateX: '100%'},
           duration: 500
           easing: 'ease-in-out'
           queue: false
           complete: -> 
+            # remove when animation is complete
             $node.remove()
-            
+
       else
         $node.remove()
 

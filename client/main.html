@@ -5,7 +5,7 @@
 </template>
 
 <template name="leaderboard">
-  <div class="leaderboard">
+  <div class="leaderboard page">
     <div class="nav">
       <div class="title">Leaderboard</div>
       <div class="right toProfile">profile</div>
@@ -28,14 +28,16 @@
 </template>
 
 <template name="profile">
-  <div class="nav">
-    <div class="title">Profile</div>
-    <div class="left toLeaderboard">leaderboard</div>
-  </div>
-  <div class="profile">
-    {{#with player}}
-      {{name}}: {{score}}
-    {{/with}}
+  <div class="profile page">
+    <div class="nav">
+      <div class="title">Profile</div>
+      <div class="left toLeaderboard">leaderboard</div>
+    </div>
+    <div class="stats">
+      {{#with player}}
+        {{name}}: {{score}}
+      {{/with}}
+    </div>
   </div>
 </template>
 

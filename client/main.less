@@ -8,6 +8,25 @@ body {
   font-family: helvetica, sans-serif;;
 }
 
+.yield {
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .page {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+  }
+}
+
+
 // primary color, blue
 @color1: #0074D9;
 @textColor1: #FFFFFF;
@@ -101,8 +120,8 @@ body {
 
 
 .leaderboard {
-  padding-bottom: 3*@toolbarHeight;
-  padding-top: @navHeight;
+  margin-bottom: 3*@toolbarHeight;
+  margin-top: @navHeight;
   .list {
     .player {
       height: @rowHeight;
@@ -130,7 +149,8 @@ body {
 }
 
 .profile {
-  padding-top: @navHeight + 15px;
+  margin-top: @navHeight + 15px;
   text-align: center;
   font-size: 18px;
 }
+
