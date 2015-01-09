@@ -1,4 +1,4 @@
-# Meteor Blaze Animations ([demo](animation.meteor.com))
+# Meteor Blaze Animations ([demo](http://animation.meteor.com))
 
 This project is to explore `_uihooks` for animations. Specifically, I'm interested in [page transitions](http://www.tympanus.net/Development/PageTransitions/) integrated with iron router and animated inserting and removing elements in a list or table from a collection cursor.
 
