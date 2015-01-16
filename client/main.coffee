@@ -71,7 +71,7 @@ Template.leaderboard.rendered = ->
       console.log "remove leaderboard"
       $node = $(node)
       # animate off the screen to the left
-      $node.velocity {translateX: '-100%'},
+      $node.velocity {translateX: '-100%', marginBottom: -$node.height()},
         duration: 250
         easing: 'ease-in'
         queue: false
